@@ -96,4 +96,11 @@ public class Quadratic {
 	public void setX2(Double x2) {
 		this.x2 = x2;
 	}
+
+	@Override
+	public String toString() {
+		return "Quadratic [id=" + id + ", a=" + a + ", b=" + b + ", c=" + c + ", x1=" + x1 + ", x2=" + x2 + "]";
+	}
+	
+	
 }
