@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import org.zakharko.ihor.quadratic.demo.dao.QuadraticRepository;
 import org.zakharko.ihor.quadratic.model.Quadratic;
 
+import java.util.List;
+
 @Service
 public class QuadraticServiceImpl implements QuadraticService{
 
@@ -17,25 +19,35 @@ public class QuadraticServiceImpl implements QuadraticService{
     @Override
     public Quadratic create(final Quadratic quadratic)
     {
-        return null;
+        Quadratic buf = quadratic;
+        for(Quadratic q : getAll()) {
+            if (q.getA() == quadratic.getA() &&
+                    q.getB() == quadratic.getB() &&
+                    q.getC() == quadratic.getC()) {
+                buf = q;
+            }
+        }
+        quadraticRepository.save(buf);
+        return buf;
     }
 
     @Override
     public Quadratic readById(final long id)
     {
-        return null;
+        return (Quadratic) quadraticRepository.findById(id).get();
     }
 
     @Override
     public void delete(final long id)
     {
-
+        Quadratic q = readById(id);
+        if (q != null) quadraticRepository.delete(q);
     }
 
     @Override
-    public Quadratic[] getAll()
+    public List<Quadratic> getAll()
     {
-        return new Quadratic[0];
+        return quadraticRepository.findAll();
     }
 
     @Override
