@@ -28,35 +28,7 @@ public class Quadratic {
 		this.a = a;
 		this.b = b;
 		this.c = c;
-		this.setAnswear(a, b, c);
 	}
-	
-	public void setAnswear(int a, int b, int c) {
-		if (a != 0){
-            if (calculateD(a, b, c) >= 0){
-                this.x1 = (-b + Math.sqrt(calculateD(a, b, c)))/(2*a);
-                this.x2 = (-b - Math.sqrt(calculateD(a, b, c)))/(2*a);
-            }
-            else {
-            	this.x1 = null;
-            	this.x2 = this.x1;
-            }
-        }
-		else {
-			if (b != 0) {
-				this.x1 = (double) (-c / b);
-				this.x2 = this.x1;
-			}
-			else {
-            	this.x1 = null;
-            	this.x2 = this.x1;
-            }
-        }
-	}
-
-	public int calculateD (int a, int b, int c){
-        return b*b - 4*a*c;
-    }
 
 	public Long getId() {
 		return id;
