@@ -1,9 +1,42 @@
 package org.zakharko.ihor.quadratic.demo.service;
 
 import org.springframework.stereotype.Service;
+import org.zakharko.ihor.quadratic.demo.dao.QuadraticRepository;
+import org.zakharko.ihor.quadratic.model.Quadratic;
 
 @Service
 public class QuadraticServiceImpl implements QuadraticService{
+
+    private QuadraticRepository quadraticRepository;
+
+    public QuadraticServiceImpl(final QuadraticRepository quadraticRepository) {
+        this.quadraticRepository = quadraticRepository;
+    }
+
+
+    @Override
+    public Quadratic create(final Quadratic quadratic)
+    {
+        return null;
+    }
+
+    @Override
+    public Quadratic readById(final long id)
+    {
+        return null;
+    }
+
+    @Override
+    public void delete(final long id)
+    {
+
+    }
+
+    @Override
+    public Quadratic[] getAll()
+    {
+        return new Quadratic[0];
+    }
 
     @Override
     public Double[] answear(final int a, final int b, final int c) {

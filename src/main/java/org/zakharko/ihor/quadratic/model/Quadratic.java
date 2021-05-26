@@ -14,7 +14,7 @@ public class Quadratic {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	private Long id;
+	private long id;
 	
 	private int a;
 	private int b;
@@ -30,7 +30,7 @@ public class Quadratic {
 		this.c = c;
 	}
 
-	public Long getId() {
+	public long getId() {
 		return id;
 	}
 
